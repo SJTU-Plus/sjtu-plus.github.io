@@ -1,0 +1,33 @@
+{
+  "name": "frow",
+  "homepage": "https://frowcss.com",
+  "authors": [
+    "Cody Sherman <cody@beg.in> (https://codysherman.com)"
+  ],
+  "description": "Flexbox Toolkit & Grid",
+  "main": "_frow.scss",
+  "moduleType": [],
+  "keywords": [
+    "css",
+    "css grid",
+    "responsive css",
+    "responsive",
+    "flex",
+    "css flex",
+    "sass",
+    "mobile-first",
+    "front-end",
+    "front end",
+    "framework",
+    "web"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

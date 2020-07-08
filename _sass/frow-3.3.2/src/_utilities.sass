@@ -1,0 +1,216 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+// Margin and padding classes
+// -------------------------
+=box-model($direction, $type, $amount, $multiplier)
+  .#{str-slice($type, 1, 1) + $direction}-#{$amount * $multiplier}
+    @if $direction == ""
+      #{$type}: ($amount * $multiplier + px) !important
+
+    @if $direction == "t" or $direction == "y"
+      #{$type}-top: ($amount * $multiplier + px) !important
+
+    @if $direction == "r" or $direction == "x"
+      #{$type}-right: ($amount * $multiplier + px) !important
+
+    @if $direction == "b" or $direction == "y"
+      #{$type}-bottom: ($amount * $multiplier + px) !important
+
+    @if $direction == "l" or $direction == "x"
+      #{$type}-left: ($amount * $multiplier + px) !important
+
+@if $frow-enable-box-model-shorcuts == true
+  @each $type in margin, padding
+    $frow-box-model-directions: "", x, y, t, r, b, l
+
+    @each $direction in $frow-box-model-directions
+      @for $amount from 0 through 5
+        $multiplier: 5
+
+        +box-model($direction, $type, $amount, $multiplier)
+
+      @for $amount from 3 through 10
+        $multiplier: 10
+
+        +box-model($direction, $type, $amount, $multiplier)
+
+      @if $type == "margin"
+        .#{str-slice($type, 1, 1) + $direction}-auto
+          @if $direction == ""
+            #{$type}: auto !important
+
+          @if $direction == "t" or $direction == "y"
+            #{$type}-top: auto !important
+
+          @if $direction == "r" or $direction == "x"
+            #{$type}-right: auto !important
+
+          @if $direction == "b" or $direction == "y"
+            #{$type}-bottom: auto !important
+
+          @if $direction == "l" or $direction == "x"
+            #{$type}-left: auto !important
+
+@if $frow-enable-utilities == true
+  // Width and height rules
+  // -------------------------
+  .width-100
+    width: 100% !important
+
+  .width-auto
+    width: auto !important
+
+  .height-100
+    height: 100% !important
+
+  .height-auto
+    height: auto !important
+
+  // Overflow rules
+  // -------------------------
+  .overflow-visible
+    overflow: visible !important
+
+  .overflow-hidden
+    overflow: hidden !important
+
+  .overflow-auto
+    overflow: auto !important
+
+  .overflow-y-visible
+    overflow-y: visible !important
+
+  .overflow-y-hidden
+    overflow-y: hidden !important
+
+  .overflow-y-auto
+    overflow-y: auto !important
+
+  .overflow-x-visible
+    overflow-x: visible !important
+
+  .overflow-x-hidden
+    overflow-x: hidden !important
+
+  .overflow-x-auto
+    overflow-x: auto !important
+
+  // Flex shrink and grow rules
+  // -------------------------
+  .shrink-0
+    flex-shrink: 0 !important
+
+  .shrink-1
+    flex-shrink: 1 !important
+
+  .grow-0
+    flex-grow: 0 !important
+
+  .grow-1
+    flex-grow: 1 !important
+
+  // Cursor pointer classes
+  // -------------------------
+  .clickable:not([disabled]), [onclick]:not([disabled])
+    cursor: pointer !important
+
+  .not-clickable, .not-clickable[onclick]
+    cursor: default !important
+
+  // Hidden rule for letsGo (letsgojs.com)
+  // -------------------------
+  .letsGo-hide
+    display: none !important
+
+  // Box shadows
+  // -------------------------
+  .shadow-light
+    box-shadow: $shadow-light !important
+
+  .shadow-dark
+    box-shadow: $shadow-dark !important
+
+  // Text align
+  // -------------------------
+  .text-left
+    text-align: left !important
+
+  .text-center
+    text-align: center !important
+
+  .text-right
+    text-align: right !important
+
+  .text-justify
+    text-align: justify !important
+
+  // Text transforms
+  // -------------------------
+  .text-uppercase
+    text-transform: uppercase !important
+
+  .text-lowercase
+    text-transform: lowercase !important
+
+  .text-capitalize
+    text-transform: capitalize !important
+
+  // Text decorations
+  // -------------------------
+  .text-underline
+    text-decoration: underline !important
+
+  .text-line-through
+    text-decoration: line-through !important
+
+  .text-italic
+    font-style: italic !important
+
+  // Text overflow styles
+  // -------------------------
+  .text-ellipsis
+    overflow: hidden !important
+    white-space: nowrap !important
+    text-overflow: ellipsis !important
+
+  // Opacity styles
+  // -------------------------
+  .opacity-0
+    opacity: 0 !important
+
+  .opacity-100
+    opacity: 1 !important
+  
+
+  // Print display rules
+  // -------------------------
+  .visible-print,
+  .frow.visible-print
+    display: none !important
+
+  @media print
+    .hidden-print,
+    .frow.hidden-print
+      display: none !important
+
+    .visible-print
+      display: block !important
+
+    .frow.visible-print
+      display: flex !important
+
+  // Accessibility rules
+  // -------------------------
+  .visible-sr,
+  .visible-sr-focusable:not(:focus)
+    position: absolute !important
+    width: 1px !important
+    height: 1px !important
+    padding: 0 !important
+    margin: -1px !important
+    overflow: hidden !important
+    clip: rect(0, 0, 0, 0) !important
+    white-space: nowrap !important
+    border: 0 !important

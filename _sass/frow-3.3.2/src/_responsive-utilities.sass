@@ -1,0 +1,89 @@
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+// Visible classes
+=visible-classes($size)
+  .visible-#{$size}
+    display: block !important
+
+  .frow.visible-#{$size}
+    display: flex !important
+
+  .hidden-#{$size},
+  .frow.hidden-#{$size}
+    display: none !important
+
+// Reponsive flex direction classes
+=flex-directions($size)
+  .frow.direction-row-#{$size}
+    flex-direction: row
+
+  .frow.direction-reverse-#{$size}
+    flex-direction: row-reverse
+
+  .frow.direction-column-#{$size}
+    flex-direction: column
+
+  .frow.direction-column-reverse-#{$size}
+    flex-direction: column-reverse
+
+@if $frow-enable-responsive-design-classes == true
+  // Centered container element
+  .frow-container
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+    padding-left: $grid-gutter-width / 2
+    padding-right: $grid-gutter-width / 2
+
+  @each $size in $sizes-names
+    @if map-get($sizes, $size) >= 310
+      @media (min-width: map-get($sizes, $size))
+        .frow-container
+          max-width: round(map-get($sizes, $size)*0.0975)*10
+
+  // Responsive hidden and visible classes
+  $visible-sizes-all: ()
+  $hidden-sizes-all: ()
+  $frow-hidden-sizes-all: ()
+
+  @each $size in $sizes-names
+    $visible-sizes-all: append($visible-sizes-all, ".visible-#{$size}", comma)
+
+  @each $size in $sizes-names
+    $hidden-sizes-all: append($hidden-sizes-all, ".hidden-#{$size}", comma)
+
+  @each $size in $sizes-names
+    $frow-hidden-sizes-all: append($frow-hidden-sizes-all, ".frow.hidden-#{$size}", comma)
+
+  #{$visible-sizes-all}
+    display: none !important
+
+  #{$hidden-sizes-all}
+    display: block !important
+
+  #{$frow-hidden-sizes-all}
+    display: flex !important
+
+  @each $size in $sizes-names
+    @if index($sizes-names, $size) == 1
+      @media (max-width: nth(nth($sizes, 2), 2) - 1)
+        +visible-classes($size)
+    @else if index($sizes-names, $size) != 1 and index($sizes-names, $size) < length($sizes)
+      @media (min-width: map-get($sizes, $size)) and (max-width: nth(nth($sizes, index($sizes-names, $size) + 1), 2) - 1)
+        +visible-classes($size)
+    @else if index($sizes-names, $size) == length($sizes)
+      @media (min-width: nth(nth($sizes, length($sizes)), 2))
+        +visible-classes($size)
+
+  @each $size in $sizes-names
+    @if index($sizes-names, $size) == 1
+      @media (max-width: nth(nth($sizes, 2), 2) - 1)
+        +flex-directions($size)
+    @else if index($sizes-names, $size) != 1 and index($sizes-names, $size) < length($sizes)
+      @media (min-width: map-get($sizes, $size)) and (max-width: nth(nth($sizes, index($sizes-names, $size) + 1), 2) - 1)
+        +flex-directions($size)
+    @else if index($sizes-names, $size) == length($sizes)
+      @media (min-width: nth(nth($sizes, length($sizes)), 2))
+        +flex-directions($size)

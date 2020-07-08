@@ -14,18 +14,22 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SJTU 学科交流群
-email: 
+author:
+  name: SJTU-Plus 团队
 description: >- # this means to ignore newlines until "baseurl:"
-  SJTU 学科交流群
+  SJTU-Plus 团队管理的学科交流群列表
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sjtu-plus.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: sjtu-plus
+social_links:
+  github:  sjtu-plus
 logo: https://avatars.githubusercontent.com/sjtu-plus
 
 # Build settings
 markdown: kramdown
-theme: minima
-# google_analytics: UA-52525161-8
+remote_theme: jekyll/minima
+
+plugins:
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

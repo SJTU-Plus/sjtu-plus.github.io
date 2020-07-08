@@ -1,0 +1,498 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Convert Hex colors to RGB for use within SVGs
+@function convert-to-rgba($color)
+  @return "rgba(" + red($color) + "," + green($color) + "," + blue($color) + "," + opacity($color) + ")"
+
+=anchor-rules
+  cursor: pointer
+  color: $link-color
+  text-decoration: none
+
+  &:hover,
+  &:focus,
+  &:active
+    color: $link-hover-color
+    text-decoration: underline
+
+  p &
+    text-decoration: underline
+    display: inline
+
+
+@if $frow-enable-html-basics == true
+  // Reset the box-sizing and tap highlight color
+  *, :after, :before
+    box-sizing: border-box
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+  [hidden]
+    display: none !important
+
+  // Set default text color
+  body
+    color: $text-color
+
+  // Reset h1-h6 margin and padding
+  h1, h2, h3, h4, h5, h6
+    margin: 0
+    padding: 0
+
+  // Links
+  a
+    +anchor-rules
+
+  // SVGs
+  svg
+    display: block
+
+  // Pre
+  pre
+    margin: 0
+
+  // Canvas
+  canvas
+    &:focus
+      outline: none
+
+// Buttons
+=frow-button-disabled
+  cursor: default !important
+  border: 2px solid $button-disabled-border-color
+  background: repeating-linear-gradient(45deg, darken($button-disabled-border-color, 5%), darken($button-disabled-border-color, 5%) 3px, $white 3px, $white 6px)
+  background-color: darken($button-disabled-border-color, 15%)
+  color: $button-disabled-text-color
+  transform: scale(1)
+
+=frow-button
+  -webkit-appearance: none
+  -moz-appearance: none
+  background: none
+  background-color: $button-background-color
+  border: 2px solid $button-border-color
+  border-radius: 3px
+  color: $button-text-color
+  cursor: pointer
+  display: block
+  font-size: 16px
+  line-height: 100%
+  text-align: center
+  outline: none
+  padding: 7px
+  transition: transform $animate-speed-fast, background $animate-speed, border-color $animate-speed, color $animate-speed, box-shadow $animate-speed
+
+  &:hover,
+  &:focus,
+  &:active
+    background-color: darken($button-background-color, 15%)
+    border-color: darken($button-border-color, 15%)
+    outline: none
+    color: $button-text-color
+    text-decoration: none
+
+  &:active
+    transform: scale($button-active-size)
+
+  &:disabled
+    +frow-button-disabled
+
+    &:hover,
+    &:focus,
+    &:active
+      +frow-button-disabled
+
+@if $frow-enable-buttons == true
+  // Buttons
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"]
+    +frow-button
+
+    &.button-link
+      &,
+      &:disabled
+        +anchor-rules
+        border: none
+        outline: none
+        padding: 0
+        background: none
+        color: inherit
+        font-weight: inherit
+        font-size: inherit
+        text-transform: none
+      &:disabled
+        &,
+        &:hover,
+        &:focus,
+        &:active
+          color: lighten($link-color, 40%)
+          text-decoration: none
+
+    &.button-none
+      &,
+      &:focus,
+      &:active,
+      &:hover,
+      &:disabled,
+      &:disabled:hover
+        border: none
+        outline: none
+        margin: 0
+        padding: 0
+        background: none
+        color: inherit
+        font-weight: inherit
+        font-size: inherit
+        text-transform: none
+
+//Labels
+=label-rules
+  color: $form-color-secondary
+  font-size: 14px
+  margin-bottom: 20px
+  width: 100%
+
+// Inputs
+=input-rules
+  background: transparent
+  border: none
+  border-radius: 0
+  border-bottom: 2px solid $form-color-secondary
+  padding: 8px 5px 4px
+  color: $text-color
+  display: block
+  font-size: 15px
+  width: 100%
+  transition: border-color $animate-speed, color $animate-speed
+
+  &::placeholder
+    opacity: 1
+    color: $form-placeholder-color
+
+  &:placeholder-shown
+    color: $form-placeholder-color
+
+  &::-webkit-input-placeholder
+    color: $form-placeholder-color
+
+  &::-moz-placeholder
+    opacity: 1
+    color: $form-placeholder-color
+
+  &:-ms-input-placeholder
+    color: $form-placeholder-color
+
+  &:hover, &:focus
+    border-color: $form-color-primary
+    outline: none
+
+  &:disabled
+    border-bottom: 1px dotted $form-color-secondary
+    color: $form-color-secondary
+    cursor: default !important
+    margin-bottom: 1px
+
+// Checkboxes and Radio Buttons
+=checkbox-rules
+  -webkit-appearance: none
+  appearance: none
+  flex-shrink: 0
+  width: 20px
+  height: 20px
+  margin: 0 5px 0 0
+  cursor: pointer
+  border: 2px solid $form-color-primary
+  transition: transform $animate-speed, background $animate-speed, border-color $animate-speed, box-shadow $animate-speed
+
+  &:hover, &:focus
+    transform: scale($form-focus-size)
+
+  &:disabled
+    cursor: default !important
+    box-shadow: none
+    border-color: $button-disabled-border-color
+
+// Range Thumb
+=thumb-styles
+  cursor: pointer
+  background: $form-color-primary
+  height: 18px
+  width: 18px
+  border-radius: 50%
+  border: 0
+  transition: transform $animate-speed
+
+=thumb-styles-focus
+  outline: none
+  transform: scale($form-focus-size)
+
+=thumb-styles-disabled
+  cursor: default !important
+  background: repeating-linear-gradient(45deg, darken($button-disabled-border-color, 5%), darken($button-disabled-border-color, 5%) 2px, $white 2px, $white 4px)
+
+// Range Track
+=track-styles-basics
+  width: 100%
+  height: 3px
+  cursor: pointer
+  border-radius: 2px
+
+=track-styles-background
+  background: $form-color-secondary
+
+=track-styles-focus
+  background: $form-color-secondary
+  transition: background $animate-speed
+
+=track-styles-disabled
+  cursor: default !important
+
+=track-styles
+  +track-styles-basics
+  +track-styles-background
+
+// Forms
+@if $frow-enable-forms == true
+  // Fieldsets
+  fieldset
+    border: none
+    margin: 0
+    padding: 0
+
+  // Legends
+  legend
+    color: $form-color-secondary
+    font-size: 14px
+    margin: 0
+    padding: 0
+    margin-bottom: 10px
+    display: block
+
+  // Labels
+  label,
+  .label
+    +label-rules
+    
+  label
+    cursor: pointer
+    display: flex
+    flex-direction: column
+
+    +flexbox-rules
+
+  // Inputs
+  input
+    +input-rules
+
+    // Number Input
+    &[type="number"]
+      -moz-appearance: textfield
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button
+        -webkit-appearance: none
+        margin: 0
+
+    // Color Picker
+    &[type="color"]
+      height: 31px
+      cursor: pointer
+
+      &::-webkit-color-swatch-wrapper
+        padding: 0
+
+      &::-webkit-color-swatch
+        border-color: $form-color-secondary
+        border-radius: 3px
+
+    // Checkboxes
+    &[type="checkbox"]
+      border-radius: 2px
+      +checkbox-rules
+
+      &:checked
+        background-color: $form-color-primary
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='8 8 36 36' version='1.1' xml:space='preserve'><path d='M14.1 27.2l7.1 7.2 16.7-16.8' fill='none' stroke='#{convert-to-rgba($white)}' stroke-width='5'/></svg>")
+
+        &:disabled
+          border-color: $button-disabled-border-color
+          background-color: darken($button-disabled-border-color, 15%)
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='8 8 36 36' version='1.1' xml:space='preserve'><path d='M14.1 27.2l7.1 7.2 16.7-16.8' fill='none' stroke='#{convert-to-rgba($form-color-primary)}' stroke-width='5'/></svg>"), repeating-linear-gradient(45deg, darken($button-disabled-border-color, 5%), darken($button-disabled-border-color, 5%) 3px, $white 3px, $white 6px)
+
+    // Radio Buttons
+    &[type="radio"]
+      border-radius: 50%
+      +checkbox-rules
+
+      &:checked
+        background-color: $form-color-primary
+        box-shadow: inset 0 0 0 2px $white
+
+        &:disabled
+          box-shadow: inset 0 0 0 2px $white
+          border-color: $button-disabled-border-color
+          background-color: $button-disabled-border-color
+
+    // Range
+    &[type="range"]
+      border: none
+      padding: 13px 0
+      -webkit-appearance: none
+      width: 100%
+      cursor: pointer
+
+      &:disabled
+        margin-bottom: 0
+
+      // Reset existing Webkit Range styles
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+
+      // Reset existing MS Range styles
+      &::-ms-track
+        width: 100%
+        cursor: pointer
+        background: transparent
+        border-color: transparent
+        color: transparent
+
+      // Remove dotted border in Firefox
+      &::-moz-focus-outer
+        border: 0
+
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        margin-top: -8px
+
+        +thumb-styles
+
+      &::-moz-range-thumb
+        +thumb-styles
+
+      &::-ms-thumb
+        +thumb-styles
+        margin-top: -1px
+
+      &:active, &:hover, &:focus
+        &::-webkit-slider-thumb
+          +thumb-styles-focus
+
+        &::-moz-range-thumb
+          +thumb-styles-focus
+
+        &::-ms-thumb
+          +thumb-styles-focus
+
+      &:disabled
+        &::-webkit-slider-thumb
+          +thumb-styles-disabled
+
+        &::-moz-range-thumb
+          +thumb-styles-disabled
+
+        &::-ms-thumb
+          +thumb-styles-disabled
+
+      &::-webkit-slider-runnable-track
+        +track-styles
+
+      &:active::-webkit-slider-runnable-track
+        +track-styles-focus
+
+      &:disabled::-webkit-slider-runnable-track
+        +track-styles-disabled
+
+      &::-moz-range-track
+        +track-styles
+
+      &:active::-moz-range-track
+        +track-styles-focus
+
+      &:disabled::-moz-range-track
+        +track-styles-disabled
+
+      &::-ms-track
+        +track-styles-basics
+        background: transparent
+        border-color: transparent
+        border-width: 16px 0
+        color: transparent
+
+      &:disabled::-ms-track
+        +track-styles-disabled
+
+      &::-ms-fill-lower
+        background: $form-color-secondary
+        border-radius: 2px
+
+      &:active::-ms-fill-lower
+        +track-styles-background
+
+      &::-ms-fill-upper
+        border-radius: 2px
+
+        +track-styles-background
+
+      &:active::-ms-fill-upper
+        +track-styles-focus
+
+  // Webkit upload button
+  input
+    &::-webkit-file-upload-button
+      +frow-button
+
+    &:disabled::-webkit-file-upload-button
+      +frow-button-disabled
+
+  // MS upload button
+  input
+    &::-ms-browse
+      +frow-button
+
+    &:disabled::-ms-browse
+      +frow-button-disabled
+
+  // Selects
+  select
+    -webkit-appearance: none
+    -moz-appearance: none
+    background: transparent
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' version='1.1' xml:space='preserve' stroke-linejoin='round'><g transform='matrix(-0.613836,-7.51732e-17,7.51732e-17,-0.613836,19.9111,16.8669)'><path d='M12.9 2.9L22.7 12.9 3.1 12.9 12.9 2.9Z' fill='#{convert-to-rgba($form-color-secondary)}'/></g></svg>")
+    background-position: right center
+    background-repeat: no-repeat
+    display: block
+    border: none
+    border-bottom: 2px solid $form-color-secondary
+    border-radius: 0
+    color: $text-color
+    font-size: 15px
+    height: 27px
+    margin-top: 4px
+    padding: 3px 24px 3px 5px
+    width: 100%
+    cursor: pointer
+    transition: border-color $animate-speed, color $animate-speed, background $animate-speed
+
+    &:hover, &:focus
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' version='1.1' xml:space='preserve' stroke-linejoin='round'><g transform='matrix(-0.613836,-7.51732e-17,7.51732e-17,-0.613836,19.9111,16.8669)'><path d='M12.9 2.9L22.7 12.9 3.1 12.9 12.9 2.9Z' fill='#{convert-to-rgba($form-color-primary)}'/></g></svg>")
+      outline: none
+      border-color: $form-color-primary
+
+    &:disabled
+      padding-bottom: 4px
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' version='1.1' xml:space='preserve' stroke-linejoin='round'><g transform='matrix(-0.613836,-7.51732e-17,7.51732e-17,-0.613836,19.9111,16.8669)'><path d='M12.9 2.9L22.7 12.9 3.1 12.9 12.9 2.9Z' fill='#{convert-to-rgba($form-color-secondary)}'/></g></svg>")
+      border-bottom: 1px dotted $form-color-secondary
+      cursor: default !important
+      color: $form-color-secondary
+
+  // Textareas
+  textarea
+    +input-rules
+    min-height: 50px
+    resize: vertical
