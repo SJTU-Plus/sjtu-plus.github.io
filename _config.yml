@@ -20,13 +20,15 @@ description: >- # this means to ignore newlines until "baseurl:"
   SJTU-Plus 团队管理的学科交流群列表
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sjtu-plus.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-social_links:
-  github:  sjtu-plus
 logo: https://avatars.githubusercontent.com/sjtu-plus
 
 # Build settings
 markdown: kramdown
 remote_theme: jekyll/minima
+
+minima:
+  social_links:
+    github: sjtu-plus
 
 plugins:
 
