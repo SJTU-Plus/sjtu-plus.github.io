@@ -6,11 +6,21 @@
     <p class="card-text">
       {{ include.group.group_number }}
     </p>
-    <!-- <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">Copy</button>
-        </div>
-        <small class="text-muted">COMMENT</small>
-      </div> -->
+    <div class="d-flex justify-content-between align-items-center">
+      {% if group.bot %}
+      <small class="text-muted">本群启用了机器人自动验证。</small>
+      {% endif %} {% if group.full %}
+      <small class="text-muted">本群已满</small>
+      {% endif %}
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary"
+          onclick="return copy(this, {{ group.group_number | escape }})"
+        >
+          复制
+        </button>
+      </div>
+    </div>
   </div>
 </div>
