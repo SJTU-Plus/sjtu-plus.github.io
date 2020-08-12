@@ -1,22 +1,21 @@
 <div class="card">
-    <div class="card-header p-3">
-        <span class="text-secondary">
-            {{ include.category.category_name }}
-        </span>
-    </div>
+  <div class="card-header p-3">
+    <span class="text-secondary">
+      {{ include.category.category_name }}
+    </span>
+  </div>
 
-    <div class="card-body">
-        <div class="row">
-            {% for group in include.category.groups %}
-                <div class="col-md-4">
-                    {% include group.html group=group %}
-                </div>
-            {% endfor %}
-        </div>
-        <div class="accordion">
-            {% for subcategory in include.category.subcategories %}
-                {% include category.html category=subcategory %}
-            {% endfor %}
-        </div>
+  <div class="card-body">
+    <div class="row">
+      {% for group in include.category.groups %}
+      <div class="col-md-4">
+        {% include group.html group=group %}
+      </div>
+      {% endfor %}
     </div>
+    <div class="accordion">
+      {% for subcategory in include.category.subcategories %} {% include
+      category.html category=subcategory %} {% endfor %}
+    </div>
+  </div>
 </div>
