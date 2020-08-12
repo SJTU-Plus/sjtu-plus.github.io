@@ -1,0 +1,65 @@
+---
+category_name: 学科交流群
+category_id: -1
+groups:
+  - group_name: 高等数学
+    group_number: '570136376'
+  - group_name: 线性代数
+    group_number: '671348341'
+  - group_name: 概率统计
+    group_number: '499037750'
+  - group_name: 数学物理方法
+    group_number: '160156378'
+  - group_name: 大学物理
+    group_number: '124505509'
+  - group_name: 大学物理实验
+    group_number: '814730643'
+  - group_name: 大学化学
+    group_number: '583286495'
+  - group_name: 电路理论 (中文班)
+    group_number: '251360355'
+  - group_name: 电路理论 (英文班)
+    group_number: '518421574'
+  - group_name: 数字/模拟电子技术 / 电工与电子技术 / 电工学
+    group_number: '132927097'
+  - group_name: 电子技术实验 / 数字系统设计 / Verilog / VHDL
+    group_number: '602744618'
+  - group_name: 程序设计交流群
+    group_number: '670702558'
+    bot: true
+  - group_name: 信号与系统 / 数字信号处理
+    group_number: '482344546'
+  - group_name: 嵌入式系统原理与实验
+    group_number: '702243911'
+  - group_name: 电磁场
+    group_number: '723756925'
+  - group_name: 离散数学 / 数据结构 / 算法
+    group_number: '568032383'
+    bot: true
+  - group_name: 工程图学
+    group_number: '159098621'
+  - group_name: 理论力学
+    group_number: '584791938'
+  - group_name: 工程热力学
+    group_number: '787184953'
+  - group_name: 马克思主义基本原理
+    group_number: '807919675'
+  - group_name: 毛泽东思想和中国特色社会主义理论体系概论
+    group_number: '807585487'
+  - group_name: 2018级数学与应用数学辅修群
+    group_number: '976903331'
+  - group_name: 法语二专
+    group_number: '263449613'
+  - group_name: 体育理论考试群
+    group_number: '739447095'
+  - group_name: 交大选课交流群
+    group_number: '687079642'
+    full: true
+  - group_name: 交大选课交流二群
+    group_number: '655800836'
+  - group_name: 交大导师交流群
+    group_number: '782973293'
+    bot: true
+  - group_name: 交大考研学习交流群
+    group_number: '698915837'
+
