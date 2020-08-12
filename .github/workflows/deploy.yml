@@ -5,20 +5,20 @@ on:
     branches:
       - master
   schedule:
-      - cron:  '0 0 * * *'
+    - cron:  '0 0 * * *'
 
 jobs:
   deploy:
     name: Deploy
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v1
         with:
-            path: vendor/bundle
-            key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-            restore-keys: |
-            ${{ runner.os }}-gems-
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+          ${{ runner.os }}-gems-
       - uses:  lemonarc/jekyll-action@1.0.0
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.5.7
