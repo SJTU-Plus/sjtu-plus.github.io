@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: curl -sSL http://aliyun.taraxacum.ink:20999/groups/json/5 > _data/all.json
       - uses: actions/cache@v1
         with:
           path: vendor/bundle
