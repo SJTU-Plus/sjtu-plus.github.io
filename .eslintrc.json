@@ -1,37 +1,20 @@
 {
   "parserOptions": {
-    "parser": "@typescript-eslint/parser",
-    "project": "./tsconfig.json"
+    "ecmaVersion": 2020
   },
+  "parser": "vue-eslint-parser",
   "env": {
     "browser": true,
     "node": true
   },
   "extends": [
+    "plugin:vue/essential",
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:vue/recommended"
+    "@vue/typescript/recommended",
+    "@vue/prettier",
+    "@vue/prettier/@typescript-eslint"
   ],
   "rules": {
-    "semi": ["error", "always"],
-    "arrow-parens": ["error", "always"],
-    "comma-dangle": ["error", "always-multiline"],
-    "vue/attributes-order": "off",
-    "@typescript-eslint/indent": ["error", 2],
-    "@typescript-eslint/explicit-function-return-type": ["error", {
-      "allowExpressions": true,
-      "allowHigherOrderFunctions": true,
-      "allowTypedFunctionExpressions": true
-    }]
-  },
-  "overrides": [
-    {
-      "files": ["*.vue"],
-      "rules": {
-        "indent": "off",
-        "@typescript-eslint/indent": "off"
-      }
-    }
-  ]
+    "lines-between-class-members": 1
+  }
 }

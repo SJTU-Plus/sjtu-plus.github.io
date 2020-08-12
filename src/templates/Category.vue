@@ -3,9 +3,7 @@
     <div class="py-5">
       <div class="container">
         <div class="accordion">
-          <CategoryComponent
-            :category="$page.category"
-          ></CategoryComponent>
+          <CategoryComponent :category="$page.category" />
         </div>
       </div>
     </div>
@@ -13,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import Group from "~/components/Group.vue";
 import CategoryComponent from "~/components/Category.vue";
 
@@ -44,5 +42,4 @@ export default class Category extends Vue {}
   }
 </page-query>
 
-<style>
-</style>
+<style></style>
