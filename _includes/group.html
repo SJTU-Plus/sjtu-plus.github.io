@@ -8,12 +8,12 @@
       else %} 暂无群号 {% endif %}
     </p>
   </div>
-    <div class="card-footer">
+  <div class="card-footer">
     <div class="d-flex justify-content-between align-items-center">
       <small class="text-muted">
         {% if group.bot_enabled %}本群启用了<a href="https://sjtu.plus"
           >机器人自助验证</a
-        >。{% endif %} {% unless group.vacancy %}本群已满{% endunless %}
+        >{% endif %} {% unless group.vacancy %}本群已满{% endunless %}
       </small>
 
       <div class="btn-group">
