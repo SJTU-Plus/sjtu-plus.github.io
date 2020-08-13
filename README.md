@@ -6,15 +6,15 @@ SJTU 学科交流群网站。
 
 ```bash
 gem install bundler jekyll
-bundle exec jekyll serve
 npm i -g prettier
-prettier --write "**/*.html"
+make serve
+make lint
 ```
 
 ## 构建网站
 
 ```bash
-bundle exec jekyll build
+make build
 ```
 
 ## 数据文件

@@ -1,4 +1,4 @@
-<div class="card mb-4 shadow-sm">
+<div class="card h-100 mb-4 shadow-sm">
   <div class="card-body">
     <h5 class="card-title">
       {{ include.group.group_name }}
@@ -7,6 +7,8 @@
       {% if include.group.group_number %} {{ include.group.group_number }} {%
       else %} 暂无群号 {% endif %}
     </p>
+  </div>
+    <div class="card-footer">
     <div class="d-flex justify-content-between align-items-center">
       <small class="text-muted">
         {% if group.bot_enabled %}本群启用了<a href="https://sjtu.plus"
