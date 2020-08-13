@@ -4,43 +4,12 @@ title: 首页
 ---
 
 <div class="container">
-  <div class="row justify-content-center my-3">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">
-            学科交流群
-          </h5>
-          <p class="card-text">
-            上海交通大学的大部分学科交流群是由 SJTU-Plus
-            团队管理。我们为其中的一些群启用了机器人自动验证入群功能。
-          </p>
-          <a href="/subjects.html" class="card-link">
-            浏览
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center my-3">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">
-            Course+
-          </h5>
-          <h6 class="card-subtitle mb-2 text-muted">
-            学期开课表 + 虚拟排课服务
-          </h6>
-
-          <p class="card-text">
-            通过 Course+ 快速查询学期课程，并进行虚拟排课。
-          </p>
-          <a href="https://sjtu-plus.github.io/course-plus" class="card-link"
-            >使用</a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include link_card.html name="学科交流群" description="包含由 SJTU-Plus
+  团队管理的学科交流群。我们为其中的一些群启用了机器人自动验证入群功能。"
+  link="/subjects/" link_description="浏览" %} {% include link_card.html
+  name="新生群" description="包含学院群、地区群、社团群、游戏群。"
+  link="/2020-new-students/" link_description="浏览" %} {% include
+  link_card.html name="Course+" subtitle="学期开课表 + 虚拟排课服务"
+  description="通过 Course+ 快速查询学期课程，并进行虚拟排课。"
+  link="https://sjtu-plus.github.io/course-plus" link_description="使用" %}
 </div>
