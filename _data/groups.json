@@ -1,0 +1,203 @@
+{
+    "category_id": 15,
+    "category_name": "\u5b66\u79d1\u4ea4\u6d41\u7fa4",
+    "groups": [
+        {
+            "group_id": 81,
+            "group_name": "\u9ad8\u7b49\u6570\u5b66",
+            "group_number": "570136376",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 82,
+            "group_name": "\u7ebf\u6027\u4ee3\u6570",
+            "group_number": "671348341",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 83,
+            "group_name": "\u6982\u7387\u7edf\u8ba1",
+            "group_number": "499037750",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 84,
+            "group_name": "\u6570\u5b66\u7269\u7406\u65b9\u6cd5",
+            "group_number": "160156378",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 85,
+            "group_name": "\u5927\u5b66\u7269\u7406",
+            "group_number": "124505509",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 86,
+            "group_name": "\u5927\u5b66\u7269\u7406\u5b9e\u9a8c",
+            "group_number": "814730643",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 87,
+            "group_name": "\u5927\u5b66\u5316\u5b66",
+            "group_number": "583286495",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 88,
+            "group_name": "\u7535\u8def\u7406\u8bba (\u4e2d\u6587\u73ed)",
+            "group_number": "251360355",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 89,
+            "group_name": "\u7535\u8def\u7406\u8bba (\u82f1\u6587\u73ed)",
+            "group_number": "518421574",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 90,
+            "group_name": "\u6570\u5b57/\u6a21\u62df\u7535\u5b50\u6280\u672f / \u7535\u5de5\u4e0e\u7535\u5b50\u6280\u672f / \u7535\u5de5\u5b66",
+            "group_number": "132927097",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 91,
+            "group_name": "\u7535\u5b50\u6280\u672f\u5b9e\u9a8c / \u6570\u5b57\u7cfb\u7edf\u8bbe\u8ba1 / Verilog / VHDL",
+            "group_number": "602744618",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 92,
+            "group_name": "\u7a0b\u5e8f\u8bbe\u8ba1\u4ea4\u6d41\u7fa4",
+            "group_number": "670702558",
+            "bot_enabled": true,
+            "vacancy": true
+        },
+        {
+            "group_id": 93,
+            "group_name": "\u4fe1\u53f7\u4e0e\u7cfb\u7edf / \u6570\u5b57\u4fe1\u53f7\u5904\u7406",
+            "group_number": "482344546",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 94,
+            "group_name": "\u5d4c\u5165\u5f0f\u7cfb\u7edf\u539f\u7406\u4e0e\u5b9e\u9a8c",
+            "group_number": "702243911",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 95,
+            "group_name": "\u7535\u78c1\u573a",
+            "group_number": "723756925",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 96,
+            "group_name": "\u79bb\u6563\u6570\u5b66 / \u6570\u636e\u7ed3\u6784 / \u7b97\u6cd5",
+            "group_number": "568032383",
+            "bot_enabled": true,
+            "vacancy": true
+        },
+        {
+            "group_id": 97,
+            "group_name": "\u5de5\u7a0b\u56fe\u5b66",
+            "group_number": "159098621",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 98,
+            "group_name": "\u7406\u8bba\u529b\u5b66",
+            "group_number": "584791938",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 99,
+            "group_name": "\u5de5\u7a0b\u70ed\u529b\u5b66",
+            "group_number": "787184953",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 100,
+            "group_name": "\u9a6c\u514b\u601d\u4e3b\u4e49\u57fa\u672c\u539f\u7406",
+            "group_number": "807919675",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 101,
+            "group_name": "\u6bdb\u6cfd\u4e1c\u601d\u60f3\u548c\u4e2d\u56fd\u7279\u8272\u793e\u4f1a\u4e3b\u4e49\u7406\u8bba\u4f53\u7cfb\u6982\u8bba",
+            "group_number": "807585487",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 102,
+            "group_name": "2018\u7ea7\u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66\u8f85\u4fee\u7fa4",
+            "group_number": "976903331",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 103,
+            "group_name": "\u6cd5\u8bed\u4e8c\u4e13",
+            "group_number": "263449613",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 104,
+            "group_name": "\u4f53\u80b2\u7406\u8bba\u8003\u8bd5\u7fa4",
+            "group_number": "739447095",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 105,
+            "group_name": "\u4ea4\u5927\u9009\u8bfe\u4ea4\u6d41\u7fa4",
+            "group_number": "687079642",
+            "bot_enabled": false,
+            "vacancy": false
+        },
+        {
+            "group_id": 106,
+            "group_name": "\u4ea4\u5927\u9009\u8bfe\u4ea4\u6d41\u4e8c\u7fa4",
+            "group_number": "655800836",
+            "bot_enabled": false,
+            "vacancy": true
+        },
+        {
+            "group_id": 107,
+            "group_name": "\u4ea4\u5927\u5bfc\u5e08\u4ea4\u6d41\u7fa4",
+            "group_number": "782973293",
+            "bot_enabled": true,
+            "vacancy": true
+        },
+        {
+            "group_id": 108,
+            "group_name": "\u4ea4\u5927\u8003\u7814\u5b66\u4e60\u4ea4\u6d41\u7fa4",
+            "group_number": "698915837",
+            "bot_enabled": false,
+            "vacancy": true
+        }
+    ],
+    "subcategories": []
+}

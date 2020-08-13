@@ -1,7 +1,12 @@
 <div class="card">
   <div class="card-header p-3">
     <span class="text-secondary">
-      {{ include.category.category_name }}
+      <a
+        class="text-muted"
+        name="category-{{ include.category.category_id }}"
+        href="#category-{{ include.category.category_id }}"
+        >{{ include.category.category_name }}</a
+      >
     </span>
   </div>
 

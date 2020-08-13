@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} | {{ site.title }}</title>
     <link
       href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,6 +15,6 @@
   </head>
 
   <body>
-    {% include header.html %} {{ content }}
+    {% include header.html %} {{ content }} {% include footer.html %}
   </body>
 </html>
