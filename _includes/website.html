@@ -1,0 +1,27 @@
+<div class="card h-100 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ include.website.name }}
+    </h5>
+    <p class="card-text">
+      {% if include.website.desc %} {{ include.website.desc }} {% endif %}
+    </p>
+    <p></p>
+  </div>
+  <div class="card-footer">
+    <div class="d-flex justify-content-between align-items-center">
+      <small class="text-muted">
+        {{ include.website.url }}
+      </small>
+
+      <div class="btn-group">
+        <a
+          class="btn btn-sm btn-outline-secondary"
+          href="{{ include.website.url }}"
+        >
+          访问
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

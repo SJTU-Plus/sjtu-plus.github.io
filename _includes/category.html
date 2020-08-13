@@ -11,9 +11,9 @@
   </div>
 
   <div class="card-body">
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-3">
       {% for group in include.category.groups %}
-      <div class="col-md-4">
+      <div class="col mb-4">
         {% include group.html group=group %}
       </div>
       {% endfor %}
