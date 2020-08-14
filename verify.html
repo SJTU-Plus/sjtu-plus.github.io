@@ -84,7 +84,7 @@ permalink: /bXWNVWzbX1/verify/
   }
 
   function refresh_token_list() {
-    const tokens = JSON.parse(localStorage.getItem("tokens"));
+    const tokens = JSON.parse(localStorage.getItem("tokens_new"));
     const result = [];
     if (tokens && tokens.length > 0) {
       for (const token of tokens) {
@@ -113,13 +113,13 @@ permalink: /bXWNVWzbX1/verify/
         data: { qq_number },
         dataType: "text",
         success: function (data, status, xhr) {
-          var tokens = JSON.parse(localStorage.getItem("tokens"));
+          var tokens = JSON.parse(localStorage.getItem("tokens_new"));
           if (tokens && tokens.length > 0) {
             tokens.push({ data, time: Date.now() });
           } else {
             tokens = [{ data, time: Date.now() }];
           }
-          localStorage.setItem("tokens", JSON.stringify(tokens));
+          localStorage.setItem("tokens_new", JSON.stringify(tokens));
           refresh_token_list();
           $("#btn_submit").show();
           $("#btn_submit_disabled").hide();
