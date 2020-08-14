@@ -13,16 +13,3 @@ layout: default
     </div>
   </div>
 </div>
-
-<script>
-  function copy(btn, groupNumber) {
-    const el = document.createElement("textarea");
-    el.value = groupNumber;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
-    btn.innerHTML = "复制成功";
-    setTimeout(() => (btn.innerHTML = "复制"), 3000);
-  }
-</script>
