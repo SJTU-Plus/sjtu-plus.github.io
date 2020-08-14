@@ -1,7 +1,12 @@
 <section>
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <p class="d-flex my-5 d-row justify-content-center">
+  {% if include.beian %}
+  <p class="mt-5 text-center">
+    <a href="https://www.beian.miit.gov.cn/">沪ICP备18040482号-2</a>
+  </p>
+  {% endif %}
+  <p class="d-flex mb-5 d-row justify-content-center">
     <span class="mx-3">由 SJTU-Plus 团队维护</span>
     <!-- Place this tag where you want the button to render. -->
     <a
