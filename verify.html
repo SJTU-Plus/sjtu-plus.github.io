@@ -1,0 +1,128 @@
+---
+layout: default_beian
+title: 加群验证
+permalink: /bXWNVWzbX1/verify/
+---
+
+<div class="container">
+  <div class="row justify-content-center my-3">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">SJTU<sup>+</sup> 加群验证服务</h5>
+          <p class="card-text">
+            请在下方表单中输入您的QQ号，我们将为您生成验证码。
+          </p>
+          <form>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  class="form-control"
+                  id="qq_number"
+                  name="qq_number"
+                  placeholder="QQ"
+                  type="text"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    disabled
+                    id="btn_submit_disabled"
+                  >
+                    <span
+                      class="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                    提交
+                  </button>
+                  <button class="btn btn-primary" type="button" id="btn_submit">
+                    提交
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="card-text">
+            该验证码可在申请加群时作为验证信息填写，管理员将在验证其有效性后通过申请。验证码
+            30 天内有效。
+          </p>
+
+          <p class="my-2">您申请的 Token</p>
+          <ul
+            class="list-group list-group-flush border-top"
+            id="token_list"
+          ></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{% raw %}
+<script>
+  function token_list_item(t) {
+    return `<li class="list-group-item">${t}</li>`;
+  }
+
+  function refresh_token_list() {
+    const tokens = JSON.parse(localStorage.getItem("tokens"));
+    const result = [];
+    if (tokens && tokens.length > 0) {
+      for (const token of tokens) {
+        if (token) {
+          result.push(token_list_item(token));
+        }
+      }
+      $("#token_list").html(result.join("\n"));
+    }
+  }
+
+  $(document).ready(function () {
+    $("#btn_submit_disabled").hide();
+
+    $("#btn_submit").click(function () {
+      var qq_number = $("#qq_number").val();
+      $("#btn_submit").hide();
+      $("#btn_submit_disabled").show();
+
+      $.ajax({
+        method: "POST",
+        url: "{{ url_for('generate') }}",
+        data: { qq_number },
+        dataType: "text",
+        success: function (data, status, xhr) {
+          console.log(data);
+          var tokens = JSON.parse(localStorage.getItem("tokens"));
+          if (tokens && tokens.length > 0) {
+            tokens.push(data);
+          } else {
+            tokens = [data];
+          }
+          localStorage.setItem("tokens", JSON.stringify(tokens));
+          refresh_token_list();
+          $("#btn_submit").show();
+          $("#btn_submit_disabled").hide();
+        },
+        error: function (xhr, status, error) {
+          if (xhr.status == 401) {
+            location.href = "/login";
+          } else {
+            console.error(status);
+            console.error(error);
+            alert(xhr.responseText);
+            console.error(xhr);
+          }
+          $("#btn_submit").show();
+          $("#btn_submit_disabled").hide();
+        },
+      });
+    });
+
+    refresh_token_list();
+  });
+</script>
+{% endraw %}
