@@ -10,6 +10,9 @@ permalink: /bXWNVWzbX1/verify/
       <div class="card shadow-sm">
         <div class="card-body">
           <h5 class="card-title">SJTU<sup>+</sup> 加群验证服务</h5>
+          <p class="card-subtitle mb-2 text-success">
+            您已成功通过 jAccount 验证。
+          </p>
           <p class="card-text">
             请在下方表单中输入您的QQ号，我们将为您生成验证码。
           </p>
@@ -65,11 +68,23 @@ permalink: /bXWNVWzbX1/verify/
 {% raw %}
 <script>
   function token_list_item(t) {
-    return `<li class="list-group-item">${t}</li>`;
+    return `<li class="list-group-item p-1">
+      <div class="row align-items-center small">
+        <div class="col-xl d-flex text-monospace">${t.data}</div>
+        <div class="col-md-auto text-muted">${new Date(
+          t.time
+        ).toLocaleDateString()}</div>
+        <div class="col-md-auto">
+          <button type="button" class="btn btn-light btn-sm" onclick="return copy(this, '${
+            t.data
+          }')">复制</button>
+        </div>
+      </div>
+    </li>`;
   }
 
   function refresh_token_list() {
-    const tokens = JSON.parse(localStorage.getItem("tokens"));
+    const tokens = JSON.parse(localStorage.getItem("tokens_new"));
     const result = [];
     if (tokens && tokens.length > 0) {
       for (const token of tokens) {
@@ -77,15 +92,18 @@ permalink: /bXWNVWzbX1/verify/
           result.push(token_list_item(token));
         }
       }
+      result.reverse();
       $("#token_list").html(result.join("\n"));
     }
   }
 
   $(document).ready(function () {
     $("#btn_submit_disabled").hide();
+    $("#qq_number").val(localStorage.getItem("qqNumber"));
 
     $("#btn_submit").click(function () {
       var qq_number = $("#qq_number").val();
+      localStorage.setItem("qqNumber", $("#qq_number").val());
       $("#btn_submit").hide();
       $("#btn_submit_disabled").show();
 
@@ -95,14 +113,13 @@ permalink: /bXWNVWzbX1/verify/
         data: { qq_number },
         dataType: "text",
         success: function (data, status, xhr) {
-          console.log(data);
-          var tokens = JSON.parse(localStorage.getItem("tokens"));
+          var tokens = JSON.parse(localStorage.getItem("tokens_new"));
           if (tokens && tokens.length > 0) {
-            tokens.push(data);
+            tokens.push({ data, time: Date.now() });
           } else {
-            tokens = [data];
+            tokens = [{ data, time: Date.now() }];
           }
-          localStorage.setItem("tokens", JSON.stringify(tokens));
+          localStorage.setItem("tokens_new", JSON.stringify(tokens));
           refresh_token_list();
           $("#btn_submit").show();
           $("#btn_submit_disabled").hide();
