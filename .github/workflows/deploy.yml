@@ -8,7 +8,10 @@ on:
     - cron:  '0 0 * * *'
   workflow_dispatch:
     inputs:
-      reason: 'group list updated'
+      reason:
+        description: 'why this workflow is triggered'     
+        required: true
+        default: 'group list updated'
 
 jobs:
   deploy:
