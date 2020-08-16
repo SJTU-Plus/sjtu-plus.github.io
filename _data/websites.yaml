@@ -25,9 +25,6 @@
 - name: 学生网络信息管理部
   url: http://nimo.sjtu.edu.cn
   desc: 负责宿舍网络的开通与维护
-- name: 传承&交大
-  url: http://share.sjtu.edu.cn
-  desc: 可以找到以前学长学姐的一些课程资源
 - name: 好大学在线
   url: https://www.cnmooc.org
   desc: 部分课程会要求在MOOC平台上完成作业
@@ -41,21 +38,31 @@
   desc: 电院综合测评、奖学金等
 - name: 学生创新中心
   url: http://www.si.sjtu.edu.cn
-  desc: 负责工程实践、工导、大创的管理，也面向全校提供一些免费开放服务
+  desc: 负责工程实践、工导、大创的管理，也面向全校提供一些免费开放服务和场地
 - name: 设备图书馆
   url: http://dev.si.sjtu.edu.cn
   desc: 创新中心的服务之一，提供物品和材料的借领服务
 - name: 软件授权中心
   url: http://lic.si.sjtu.edu.cn
-  desc: MATLAB、Adobe全家桶、Endnotes等正版软件的申请
+  desc: 创新中心的服务之一，提供MATLAB、Adobe全家桶、Endnotes等正版软件的申请
+- name: 3D打印平台
+  url: http://3d.si.sjtu.edu.cn
+  desc: 创新中心的服务之一，提供3D模型的设计与加工服务
 - name: 网络信息中心
   url: https://net.sjtu.edu.cn
-- name: 正版软件服务
+  desc: 维护和建设校内网络信息基础设施和服务
+- name: 网络信息中心正版软件
   url: https://net.sjtu.edu.cn/wlfw/zbrj.htm
   desc: VMware、Foxit PDF编辑器等正版软件的申请
+- name: 传承＆交大
+  url: http://share.sjtu.edu.cn
+  desc: 可以找到以前学长学姐的一些课程资源
 - name: 交大葡萄
   url: https://pt.sjtu.edu.cn
   desc: 交大的PT资源下载站
+- name: SJTUG软件源镜像
+  url: https://mirrors.sjtug.sjtu.edu.cn
+  desc: 由SJTUG社团维护的软件源镜像服务
 - name: 爱心屋
   url: https://aixinwu.sjtu.edu.cn
 - name: Canvas 教学平台
