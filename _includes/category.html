@@ -12,11 +12,17 @@
 
   <div class="card-body">
     <div class="row row-cols-1 row-cols-md-3">
-      {% assign sorted_groups=include.category.groups | sort: 'group_name' %} {%
-      for group in sorted_groups %}
+      {% assign sorted_groups=include.category.groups | sort: 'group_name' %}
+      <!--  -->
+      {% for group in sorted_groups %}
+      <!--  -->
+      {% if group.group_number %}
+      <!--  -->
       <div class="col mb-4">
         {% include group.html group=group %}
       </div>
+      {% endif %}
+      <!--  -->
       {% endfor %}
     </div>
     <div class="accordion">
