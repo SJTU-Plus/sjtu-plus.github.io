@@ -18,13 +18,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Turnstyle
         uses: softprops/turnstyle@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: curl -sSL http://aliyun.taraxacum.ink:20999/groups/json/5 > _data/all.json
-      - run: curl -sSL http://aliyun.taraxacum.ink:20999/groups/json/15 > _data/groups.json
+      - uses: actions/checkout@v2
+      - run: curl -sSL http://groups.sjtu.plus/groups/json/5 > _data/all.json
+      - run: curl -sSL http://groups.sjtu.plus/groups/json/15 > _data/groups.json
       - uses: actions/cache@v1
         with:
           path: vendor/bundle
