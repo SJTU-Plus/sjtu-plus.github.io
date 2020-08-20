@@ -23,7 +23,7 @@ email: your-email@example.com
 description: >-
   SJTU+ 学科交流群
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://www.sjtu.plus" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://sjtu.plus" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
