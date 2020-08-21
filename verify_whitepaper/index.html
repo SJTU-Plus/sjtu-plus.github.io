@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>群验证白皮书 | SJTU+ 学科交流群</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="jumbotron jumbotron-fluid text-center bg-light">
+  <div class="container">
+    <div class="pt-5">
+      <h1>SJTU<sup>&nbsp;+&nbsp;</sup></h1>
+    </div>
+    <p class="lead mb-5">
+      学科交流群
+    </p>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="http://plus.dev.sjtu.edu.cn/">
+          首页
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="http://plus.dev.sjtu.edu.cn/verify">
+          加群验证
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="http://plus.dev.sjtu.edu.cn/subjects/">
+          学科交流群
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="http://plus.dev.sjtu.edu.cn/freshmen-groups/">
+          2020 新生交流群
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="http://plus.dev.sjtu.edu.cn/websites/">
+          常用网站
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  *[title="站长统计"] {
+    display: none;
+  }
+
+  .article {
+    max-width: 600px;
+  }
+</style>
+ <div class="py-5">
+  <div class="container article">
+    <h2 id="sjtu-plus-加群验证服务白皮书">SJTU-Plus 加群验证服务白皮书</h2>
+
+<h3 id="系统结构">系统结构</h3>
+
+<p>本系统主要由令牌签发和令牌验证两部分构成。</p>
+
+<p>令牌签发部分是一个 Web 服务。用户在我们的网站上通过 jAccount 登录，然后输入 QQ 号码。系统将针对该 QQ 号码签发一个带有时间戳的令牌。</p>
+
+<p>令牌验证由 QQ 群 Bot 管理员进行。当用户申请加入 QQ 群并在验证信息中提交该令牌时，QQ 群 Bot 会拦截加群请求并进行令牌验证。如果令牌验证通过，Bot 可以检查时间戳是否符合其配置中的有效期，并做出允许进群或拒绝进群的决定。</p>
+
+<h3 id="基于-aes-cmac-的令牌方案">基于 AES-CMAC 的令牌方案</h3>
+
+<p>该方案要求签发服务器和验证服务器配置一个相同的 AES 密钥 secret。当用户提交 QQ 号给签发服务器时，签发服务器生成一个口令 Token。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Token = Base58Encode(timestamp || AES-CMAC(secret, timestamp || qq_number))
+</code></pre></div></div>
+
+<p>当用户申请加群时，验证服务器（QQ 群 Bot 管理员）首先执行 Base58 解码，提取出时间戳，然后验证 MAC。</p>
+
+<p>该方案的优点是服务器不需要存储任何业务数据，且管理 Bot 不需要与签发服务器进行任何的通信。该方案的缺点是生成的 Token 通常需要比较长的长度，使用 AES-CMAC 生成的 Base58 编码的 Token 是一个长度为 28 的字符串。且随着 Token 中需要附加的明文信息增多，Token 的长度还会进一步增大。</p>
+
+  </div>
+</div>
+ <section>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  
+  <p class="mt-5 text-center">
+    <a href="https://www.beian.miit.gov.cn/">沪ICP备18040482号-2</a>
+  </p>
+  
+  <p class="d-flex mt-5 d-row justify-content-center">
+    <small class="mx-3 text-muted">我们使用“站长统计”收集您的访问信息。</small>
+  </p>
+  <p class="d-flex mb-5 d-row justify-content-center">
+    <span class="mx-3">由 SJTU-Plus 团队维护</span>
+    <!-- Place this tag where you want the button to render. -->
+    <a
+      class="github-button mx-3"
+      href="https://github.com/sjtu-plus/sjtu-plus.github.io"
+      data-icon="octicon-star"
+      data-size="large"
+      data-show-count="true"
+      aria-label="Star sjtu-plus/sjtu-plus.github.io on GitHub"
+      >Star</a
+    >
+  </p>
+</section>
+<script>
+  function copy(btn, groupNumber) {
+    const el = document.createElement("textarea");
+    el.value = groupNumber;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    btn.innerHTML = "复制成功";
+    setTimeout(() => (btn.innerHTML = "复制"), 3000);
+  }
+</script>
+
+    <script
+      type="text/javascript"
+      src="https://v1.cnzz.com/z_stat.php?id=1279179639&web_id=1279179639"
+    ></script>
+  </body>
+</html>
