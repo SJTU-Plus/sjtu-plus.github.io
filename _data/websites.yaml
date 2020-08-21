@@ -1,5 +1,8 @@
 - name: 交大迎新网
   url: https://welcome.sjtu.edu.cn
+- name: 水源社区
+  url: https://dev.bbs.sjtu.edu.cn
+  desc: 校内论坛
 - name: 交大家园网
   url: http://ourhome.sjtu.edu.cn
 - name: 上海交通大学教务处
