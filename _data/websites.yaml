@@ -1,72 +1,81 @@
-- name: 交大迎新网
-  url: https://welcome.sjtu.edu.cn
-- name: 水源社区
-  url: https://dev.bbs.sjtu.edu.cn
-  desc: 校内论坛
-- name: 交大家园网
-  url: http://ourhome.sjtu.edu.cn
-- name: 上海交通大学教务处
-  url: http://jwc.sjtu.edu.cn
-  desc: 借教室、学业相关的办事指南与管理规定等
-- name: 上海交通大学教学信息服务网
-  url: http://i.sjtu.edu.cn
-  desc: 本科生的选课、课表查询等
-- name: 学生创新实践网
-  url: http://uitp.sjtu.edu.cn
-  desc: prp和大创
-- name: 上海交通大学图书馆官网
-  url: http://www.lib.sjtu.edu.cn
-  desc: 包库登录知网万方下载资源
-- name: 图书馆小组学习室预约
-  url: http://studyroom.lib.sjtu.edu.cn
-- name: 上海交通大学工科平台
-  url: http://ep.sjtu.edu.cn
-  desc: 工试要找的往年分院政策基本都在这里可以找到
-- name: 致远学院
-  url: https://zhiyuan.sjtu.edu.cn
-  desc: 可找到致远的招生信息
-- name: 学生网络信息管理部
-  url: http://nimo.sjtu.edu.cn
-  desc: 负责宿舍网络的开通与维护
-- name: 好大学在线
-  url: https://www.cnmooc.org
-  desc: 部分课程会要求在MOOC平台上完成作业
-- name: 电子信息与电气工程学院
-  url: http://www.seiee.sjtu.edu.cn
-- name: 电院本科生教务办公室
-  url: http://bjwb.seiee.sjtu.edu.cn
-  desc: 可以查到电院的培养计划、课程信息，以及电院往年的分流政策
-- name: 电院学生工作办事处
-  url: http://xsb.seiee.sjtu.edu.cn
-  desc: 电院综合测评、奖学金等
-- name: 学生创新中心
-  url: http://www.si.sjtu.edu.cn
-  desc: 负责工程实践、工导、大创的管理，也面向全校提供一些免费开放服务和场地
-- name: 设备图书馆
-  url: http://dev.si.sjtu.edu.cn
-  desc: 创新中心的服务之一，提供物品和材料的借领服务
-- name: 软件授权中心
-  url: http://lic.si.sjtu.edu.cn
-  desc: 创新中心的服务之一，提供MATLAB、Adobe全家桶、Endnotes等正版软件的申请
-- name: 3D打印平台
-  url: http://3d.si.sjtu.edu.cn
-  desc: 创新中心的服务之一，提供3D模型的设计与加工服务
-- name: 网络信息中心
-  url: https://net.sjtu.edu.cn
-  desc: 维护和建设校内网络信息基础设施和服务
-- name: 网络信息中心正版软件
-  url: https://net.sjtu.edu.cn/wlfw/zbrj.htm
-  desc: VMware、Foxit PDF编辑器等正版软件的申请
-- name: 传承＆交大
-  url: http://share.sjtu.edu.cn
-  desc: 可以找到以前学长学姐的一些课程资源
-- name: 交大葡萄
-  url: https://pt.sjtu.edu.cn
-  desc: 交大的PT资源下载站
-- name: SJTUG软件源镜像
-  url: https://mirrors.sjtug.sjtu.edu.cn
-  desc: 由SJTUG社团维护的软件源镜像服务
-- name: 爱心屋
-  url: https://aixinwu.sjtu.edu.cn
-- name: Canvas 教学平台
-  url: https://oc.sjtu.edu.cn
+category_id: 233333
+category_name: 网站
+subcategories:
+- category_id: 233333
+  category_name: 常用网站
+  websites:
+  - name: 交大迎新网
+    url: https://welcome.sjtu.edu.cn
+  - name: 水源社区
+    url: https://dev.bbs.sjtu.edu.cn
+    desc: 校内论坛
+  - name: 交大家园网
+    url: http://ourhome.sjtu.edu.cn
+  - name: 上海交通大学图书馆官网
+    url: http://www.lib.sjtu.edu.cn
+    desc: 包库登录知网万方下载资源
+  - name: 图书馆小组学习室预约
+    url: http://studyroom.lib.sjtu.edu.cn
+  - name: 学生网络信息管理部
+    url: http://nimo.sjtu.edu.cn
+    desc: 负责宿舍网络的开通与维护
+  - name: 好大学在线
+    url: https://www.cnmooc.org
+    desc: 部分课程会要求在MOOC平台上完成作业
+  - name: 学生创新中心
+    url: http://www.si.sjtu.edu.cn
+    desc: 负责工程实践、工导、大创的管理，也面向全校提供一些免费开放服务和场地
+  - name: 设备图书馆
+    url: http://dev.si.sjtu.edu.cn
+    desc: 创新中心的服务之一，提供物品和材料的借领服务
+  - name: 软件授权中心
+    url: http://lic.si.sjtu.edu.cn
+    desc: 创新中心的服务之一，提供MATLAB、Adobe全家桶、Endnotes等正版软件的申请
+  - name: 3D打印平台
+    url: http://3d.si.sjtu.edu.cn
+    desc: 创新中心的服务之一，提供3D模型的设计与加工服务
+  - name: 网络信息中心
+    url: https://net.sjtu.edu.cn
+    desc: 维护和建设校内网络信息基础设施和服务
+  - name: 网络信息中心正版软件
+    url: https://net.sjtu.edu.cn/wlfw/zbrj.htm
+    desc: VMware、Foxit PDF编辑器等正版软件的申请
+  - name: 传承＆交大
+    url: http://share.sjtu.edu.cn
+    desc: 可以找到以前学长学姐的一些课程资源
+  - name: 交大葡萄
+    url: https://pt.sjtu.edu.cn
+    desc: 交大的PT资源下载站
+  - name: SJTUG软件源镜像
+    url: https://mirrors.sjtug.sjtu.edu.cn
+    desc: 由SJTUG社团维护的软件源镜像服务
+  - name: 爱心屋
+    url: https://aixinwu.sjtu.edu.cn
+  - name: Canvas 教学平台
+    url: https://oc.sjtu.edu.cn
+- category_id: 23333
+  category_name: 学院与教学
+  websites:
+  - name: 电子信息与电气工程学院
+    url: http://www.seiee.sjtu.edu.cn
+  - name: 电院本科生教务办公室
+    url: http://bjwb.seiee.sjtu.edu.cn
+    desc: 可以查到电院的培养计划、课程信息，以及电院往年的分流政策
+  - name: 电院学生工作办事处
+    url: http://xsb.seiee.sjtu.edu.cn
+    desc: 电院综合测评、奖学金等
+  - name: 上海交通大学教务处
+    url: http://jwc.sjtu.edu.cn
+    desc: 借教室、学业相关的办事指南与管理规定等
+  - name: 上海交通大学教学信息服务网
+    url: http://i.sjtu.edu.cn
+    desc: 本科生的选课、课表查询等
+  - name: 学生创新实践网
+    url: http://uitp.sjtu.edu.cn
+    desc: PRP 和大创
+  - name: 致远学院
+    url: https://zhiyuan.sjtu.edu.cn
+    desc: 可找到致远的招生信息
+  - name: 上海交通大学工科平台
+    url: http://ep.sjtu.edu.cn
+    desc: 工试要找的往年分院政策基本都在这里可以找到
