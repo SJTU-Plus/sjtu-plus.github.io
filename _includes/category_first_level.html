@@ -1,11 +1,43 @@
 <div class="row row-cols-1 row-cols-md-3">
-  {% for group in include.category.groups %}
+  {% if include.category.groups %}
+  <!--  -->
+  {% assign sorted_groups=include.category.groups | sort: 'group_name' %}
+  <!--  -->
+  {% for group in sorted_groups %}
+  <!--  -->
+  {% if group.group_number %}
+  <!--  -->
   <div class="col mb-4">
     {% include group.html group=group %}
   </div>
+  {% endif %}
+  <!--  -->
+  {% endfor %}
+  <!--  -->
+  {% endif %}
+  <!--  -->
+  {% if include.category.websites %}
+  <!--  -->
+  {% assign sorted_websites=include.category.websites | sort: 'name' %}
+  <!--  -->
+  {% for website in sorted_websites %}
+  <div class="col mb-4">
+    {% include website.html website=website %}
+  </div>
+  {% endfor %}
+  <!--  -->
+  {% endif %}
+</div>
+
+{% if include.category.subcategories %}
+<div class="accordion">
+  {% assign sorted_categories=include.category.subcategories | sort:
+  'category_name' %}
+  <!--  -->
+  {% for subcategory in sorted_categories %}
+  <!--  -->
+  {% include category.html category=subcategory %}
+  <!--  -->
   {% endfor %}
 </div>
-<div class="accordion">
-  {% for subcategory in include.category.subcategories %} {% include
-  category.html category=subcategory %} {% endfor %}
-</div>
+{% endif %}

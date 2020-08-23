@@ -1,18 +1,7 @@
 ---
-layout: default
+layout: category
 title: 常用网站
 permalink: /websites/
 ---
 
-{% assign sorted_websites=site.data.websites | sort: 'name' %}
-<div class="py-5">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      {% for website in sorted_websites %}
-      <div class="col mb-4">
-        {% include website.html website=website %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
+{% include category_first_level.html category=site.data.websites %}
