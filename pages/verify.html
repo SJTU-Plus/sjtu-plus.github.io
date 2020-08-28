@@ -52,6 +52,8 @@ permalink: /bXWNVWzbX1/verify/
             30 天内有效。
           </p>
 
+          <div id="qrcode"></div>
+
           <p class="my-2">您申请的 Token</p>
           <ul
             class="list-group list-group-flush border-top"
@@ -64,6 +66,7 @@ permalink: /bXWNVWzbX1/verify/
 </div>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 {% raw %}
 <script>
@@ -78,6 +81,9 @@ permalink: /bXWNVWzbX1/verify/
           <button type="button" class="btn btn-light btn-sm" onclick="return copy(this, '${
             t.data
           }')">复制</button>
+          <button type="button" class="btn btn-light btn-sm" onclick="return qrcode('${
+            t.data
+          }')">二维码</button>
         </div>
       </div>
     </li>`;
@@ -95,6 +101,11 @@ permalink: /bXWNVWzbX1/verify/
       result.reverse();
       $("#token_list").html(result.join("\n"));
     }
+  }
+
+  function qrcode(data) {
+    $("#qrcode").html("");
+    new QRCode($("#qrcode")[0], data);
   }
 
   $(document).ready(function () {
