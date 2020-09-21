@@ -21,8 +21,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
-      - run: curl -sSL http://groups.sjtu.plus/groups/json/5 > _data/all.json
-      - run: curl -sSL http://groups.sjtu.plus/groups/json/15 > _data/groups.json
       - uses: actions/cache@v1
         with:
           path: vendor/bundle
