@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>加群验证 | SJTU+ 学科交流群</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="jumbotron jumbotron-fluid text-center bg-light">
+  <div class="container">
+    <div class="pt-5">
+      <h1>SJTU<sup>&nbsp;+&nbsp;</sup></h1>
+    </div>
+    <p class="lead mb-5">
+      学科交流群
+    </p>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="/">
+          首页
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/subjects/">
+          学科交流群
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/2020-new-students/">
+          2020 新生交流群
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="/websites/">
+          常用网站
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  *[title="站长统计"] {
+    display: none;
+  }
+
+  .article {
+    max-width: 600px;
+  }
+</style>
+ <div class="container">
+  <div class="row justify-content-center my-3">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">SJTU<sup>+</sup> 加群验证服务</h5>
+          <p class="card-subtitle mb-2 text-warning">
+            即将前往验证页面。
+          </p>
+
+          <p class="card-text">
+            在您通过 jAccount 验证后，SJTU-Plus 加群验证服务将会为您派发验证码
+            (Token)。您可以将它填入支持自助验证 QQ 群的加群申请中。
+          </p>
+
+          <ul>
+            <li>我们的服务器不会储存您的 jAccount 信息与 QQ 号。</li>
+            <li>
+              为了方便您多次使用本服务，我们会将一些信息保存在您的浏览器中。您可以随时清除这些数据。
+            </li>
+            <li>
+              技术详情可以参阅
+              <a href="/verify_whitepaper/"
+                >SJTU-Plus 加群验证服务白皮书</a
+              >。
+            </li>
+          </ul>
+
+          <p class="card-text text-right">
+            <a class="btn btn-outline-success" href="/verify">开始验证</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <section>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  
+  <p class="mt-5 text-center">
+    <a href="https://www.beian.miit.gov.cn/">沪ICP备18040482号-2</a>
+  </p>
+  
+  <p class="d-flex mt-5 d-row justify-content-center">
+    <small class="mx-3 text-muted">我们使用“站长统计”收集您的访问信息。</small>
+  </p>
+  <p class="d-flex mb-5 d-row justify-content-center">
+    <span class="mx-3">由 SJTU-Plus 团队维护</span>
+    <!-- Place this tag where you want the button to render. -->
+    <a
+      class="github-button mx-3"
+      href="https://github.com/sjtu-plus/sjtu-plus.github.io"
+      data-icon="octicon-star"
+      data-size="large"
+      data-show-count="true"
+      aria-label="Star sjtu-plus/sjtu-plus.github.io on GitHub"
+      >Star</a
+    >
+  </p>
+</section>
+<script>
+  function copy(btn, groupNumber) {
+    const el = document.createElement("textarea");
+    el.value = groupNumber;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    btn.innerHTML = "复制成功";
+    setTimeout(() => (btn.innerHTML = "复制"), 3000);
+  }
+</script>
+
+    <script
+      type="text/javascript"
+      src="https://v1.cnzz.com/z_stat.php?id=1279179639&web_id=1279179639"
+    ></script>
+  </body>
+</html>
